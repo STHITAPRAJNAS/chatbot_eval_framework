@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chatbot-eval-pkg"
+version = "0.1.0"
+authors = [
+  { name="Your Name", email="your.email@example.com" }, # Placeholder - User should update
+]
+description = "A reusable package for evaluating chatbot conversations using deepeval with pytest and behave."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License", # Assuming MIT, user can change
+    "Operating System :: OS Independent",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "deepeval",
+    "requests",
+    "python-dotenv",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "behave",
+    "pytest-html", # Optional for pytest reports
+]
+aws = [
+    "boto3", # For Bedrock/AWS integrations if needed
+]
+dev = [
+    "chatbot-eval-pkg[test,aws]", # Includes test and aws dependencies
+    # Add linters, formatters etc. here if desired e.g. "ruff", "mypy"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/yourusername/chatbot-eval-framework" # Placeholder
+"Bug Tracker" = "https://github.com/yourusername/chatbot-eval-framework/issues" # Placeholder
+
+[tool.setuptools.packages.find]
+where = ["src"]  # look for packages in src/

@@ -1,0 +1,28 @@
+{
+    "id": "single_turn_fact_check",
+    "description": "Test if the chatbot can answer a simple factual question correctly.",
+    "input": "What is the capital of France?",
+    "expected_output": "Paris",
+    "context": [
+      "The user is asking a geographical question."
+    ],
+    "retrieval_context": null,
+    "metrics": [
+      {
+        "name": "AnswerRelevancy",
+        "threshold": 0.8
+      },
+      {
+        "name": "Faithfulness",
+        "threshold": 0.9
+      },
+      {
+        "name": "GEval",
+        "criteria": "Is the answer factually correct based on general knowledge?",
+        "threshold": 0.9
+        // Optional: Specify model if needed and not globally configured
+        // "model": "anthropic.claude-v2"
+      }
+    ]
+  }
+  

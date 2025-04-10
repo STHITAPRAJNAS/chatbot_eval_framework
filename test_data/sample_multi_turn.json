@@ -1,0 +1,38 @@
+{
+    "id": "multi_turn_follow_up",
+    "description": "Test if the chatbot can maintain context and answer a follow-up question.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "What is the main component of the sun?"
+      },
+      {
+        "role": "assistant",
+        "content": "The main component of the sun is hydrogen, which makes up about 74% of its mass."
+      },
+      {
+        "role": "user",
+        "content": "What about the second most abundant element?"
+      }
+    ],
+    "expected_output": "Helium",
+    "context": [
+      "The conversation is about the composition of the sun."
+    ],
+    "retrieval_context": null,
+    "metrics": [
+      {
+        "name": "AnswerRelevancy",
+        "threshold": 0.8
+      },
+      {
+        "name": "ContextualRelevancy",
+        "threshold": 0.7
+      },
+      {
+          "name": "Toxicity",
+          "threshold": 0.1  // Expect low toxicity
+      }
+    ]
+  }
+  
