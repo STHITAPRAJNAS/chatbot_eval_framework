@@ -31,6 +31,7 @@ test = [
     "pytest",
     "behave",
     "pytest-html", # Optional for pytest reports
+    "python-dotenv", # Explicitly add here as well
 ]
 aws = [
     "boto3", # For Bedrock/AWS integrations if needed
